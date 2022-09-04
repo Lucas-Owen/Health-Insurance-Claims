@@ -1,0 +1,13 @@
+.claimPageChild {
+    width: 46%;
+    float: left;
+    padding: 1.5%;
+}
+
+#claimPage {
+    display: inline-block;
+}
+
+h5 {
+    text-align: center;
+}
