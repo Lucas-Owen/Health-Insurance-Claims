@@ -6,10 +6,7 @@ export default function ProviderNavBar() {
         <nav>
             <ul>
                 <li>
-                    <Link className="NavBarLink" to="/provider/claim">Claim</Link>
-                </li>
-                <li>
-                    <Link className="NavBarLink" to="/provider/invoice">Invoice</Link>
+                    <Link className="NavBarLink" to='/provider/claimPage'>Claim</Link>
                 </li>
             </ul>
         </nav>
