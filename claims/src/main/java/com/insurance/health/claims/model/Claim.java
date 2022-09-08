@@ -11,6 +11,8 @@ public class Claim {
 	private String lastName;
 	private LocalDate dateOfBirth;
 	private int beneficiaryId;
+
+	private int memberNumber;
 	
 	private String patientFirstName;
 	private String patientMiddleName;
@@ -24,8 +26,9 @@ public class Claim {
 			@JsonProperty("lastName") String lastName, 
 			@JsonProperty("dateOfBirth") String dateOfBirth,
 			@JsonProperty("beneficiaryId") int beneficiaryId,
-			@JsonProperty("patientFirstName") String patientFirstName, 
-			@JsonProperty("patientMiddleName") String patientMiddleName, 
+			@JsonProperty("memberNumber") int memberNumber,
+			@JsonProperty("patientFirstName") String patientFirstName,
+			@JsonProperty("patientMiddleName") String patientMiddleName,
 			@JsonProperty("patientLastName") String patientLastName, 
 			@JsonProperty("patientDay") int patientDay,
 			@JsonProperty("patientDateOfBirth") String patientDateOfBirth,
@@ -37,6 +40,7 @@ public class Claim {
 		this.lastName = lastName;
 		this.dateOfBirth = LocalDate.parse(dateOfBirth);
 		this.beneficiaryId = beneficiaryId;
+		this.memberNumber = memberNumber;
 		this.patientFirstName = patientFirstName;
 		this.patientMiddleName = patientMiddleName;
 		this.patientLastName = patientLastName;
@@ -113,9 +117,9 @@ public class Claim {
 	@Override
 	public String toString() {
 		return "Claim [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
-				+ ", dateOfBirth=" + dateOfBirth + ", beneficiaryId=" + beneficiaryId + ", patientFirstName="
+				+ ", dateOfBirth=" + dateOfBirth + ", memberNumber=" + memberNumber + ", patientFirstName="
 				+ patientFirstName + ", patientMiddleName=" + patientMiddleName + ", patientLastName=" + patientLastName
-				+ ", patientDateOfBirth=" + patientDateOfBirth + ", claimDate=" + claimDate + ", diagnosis=" + diagnosis
+				+ ", patientDateOfBirth=" + patientDateOfBirth + ", beneficiaryId=" + beneficiaryId + ", claimDate=" + claimDate + ", diagnosis=" + diagnosis
 				+ "]";
 	}
 	
