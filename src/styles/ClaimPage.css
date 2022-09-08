@@ -1,14 +1,21 @@
 .claimPageChild {
-    width: 46%;
+    width: 48%;
     float: left;
-    padding: 1.5%;
+    padding: 10px;
 }
 
-#claimPage {
+#claimPageForms {
     display: inline-block;
+    width: 100%;
 }
 
-h5 {
+h3 {
     text-align: center;
+}
+
+#claimPageSubmitButtons {
+    width: 96%;
+    display: flex;
+    justify-content: center;
 }
 

@@ -6,7 +6,7 @@ class ClaimForm extends react.Component {
     render(){
         return (
             <div id="claimForm" className="claimPageChild">
-                <h5>Claim Form</h5>
+                <h3>Claim Form</h3>
                 <fieldset>
                     <legend>Principal Member</legend>
                     <div className="NameDiv">
