@@ -1,4 +1,4 @@
-package com.insurance.health.claims.security;
+package com.insurance.health.claims.security.filters;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -20,6 +20,8 @@ import java.util.Date;
 
 public class JwtUserPassAuthFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationProvider authenticationManager;
+    public static final String KEY = "THISKEYSHOULDBEASLONGASDESIREDTHISKEYSHOULDBEASLONGASDESIREDTHISKEYSHOULDBEASLONGASDESIRED";
+
 
     public JwtUserPassAuthFilter(AuthenticationProvider authenticationProvider) {
         this.authenticationManager = authenticationProvider;
@@ -40,14 +42,13 @@ public class JwtUserPassAuthFilter extends UsernamePasswordAuthenticationFilter 
     protected void successfulAuthentication(HttpServletRequest request,
                                             HttpServletResponse response,
                                             FilterChain chain, Authentication authResult) throws IOException, ServletException {
-        String key = "THISKEYSHOULDBEASLONGASDESIREDTHISKEYSHOULDBEASLONGASDESIREDTHISKEYSHOULDBEASLONGASDESIRED";
 
         String token = Jwts.builder()
                     .setSubject(authResult.getName())
                     .claim("authorities", authResult.getAuthorities())
                     .setIssuedAt(new Date())
                     .setExpiration(java.sql.Date.valueOf(LocalDate.now().plusDays(1)))
-                    .signWith(Keys.hmacShaKeyFor(key.getBytes()))
+                    .signWith(Keys.hmacShaKeyFor(KEY.getBytes()))
                     .compact();
 
         response.addHeader("Authorization", "Bearer " + token);

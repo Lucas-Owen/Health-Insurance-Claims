@@ -1,8 +1,20 @@
 package com.insurance.health.claims.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 
+@Entity
 public class InvoiceLine {
+	@Id
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "invoice_line_seq"
+	)
+	@SequenceGenerator(
+			name = "invoice_line_seq",
+			allocationSize = 1
+	)
+	long lineId;
 	private String category;
 	private String description;
 	private double price;
@@ -42,6 +54,14 @@ public class InvoiceLine {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public long getLineId() {
+		return lineId;
+	}
+
+	public void setLineId(long lineId) {
+		this.lineId = lineId;
 	}
 
 	@Override

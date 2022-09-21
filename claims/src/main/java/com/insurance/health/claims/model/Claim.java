@@ -3,17 +3,28 @@ package com.insurance.health.claims.model;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 
+
+@Entity
 public class Claim {
 
+	@Id
+	@GeneratedValue(
+			strategy = GenerationType.SEQUENCE,
+			generator = "claims_seq"
+	)
+	@SequenceGenerator(
+			name = "claims_seq",
+			allocationSize = 1
+	)
+	private Long claimNo;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	private LocalDate dateOfBirth;
 	private int beneficiaryId;
-
 	private int memberNumber;
-	
 	private String patientFirstName;
 	private String patientMiddleName;
 	private String patientLastName;
@@ -114,6 +125,23 @@ public class Claim {
 	public void setDiagnosis(String diagnosis) {
 		this.diagnosis = diagnosis;
 	}
+
+	public Long getClaimNo() {
+		return claimNo;
+	}
+
+	public void setClaimNo(Long claimNo) {
+		this.claimNo = claimNo;
+	}
+
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "Claim [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName

@@ -1,4 +1,8 @@
 package com.insurance.health.claims.dao;
 
-public class ClaimRepo {
+import com.insurance.health.claims.model.Claim;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ClaimRepo extends JpaRepository<Claim, Long> {
+
 }
