@@ -1,0 +1,18 @@
+#loginPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputField label {
+    display: inline-block;
+    width: 80px;
+}
+
+.inputField {
+    padding-bottom: 5px;
+}
+
+button {
+    width: 100px;
+}

@@ -1,0 +1,23 @@
+.claimPageChild {
+    width: 48%;
+    float: left;
+    padding: 10px;
+}
+
+#claimPageForms {
+    display: inline-block;
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.claimPageSubmitButton {
+    width: 100px;
+}
+
+.centerContainer {
+    padding-top: 5px;
+}
+

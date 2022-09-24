@@ -1,0 +1,24 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.NavBarLink {
+    text-decoration: none;
+    color: white;
+}
+
+.NavBarLink:hover {
+    color: blue;
+}
+
+li:hover {
+    border-color: blue;
+}

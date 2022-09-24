@@ -1,0 +1,41 @@
+.NameDiv {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.DetailField {
+    display: inline-block;
+    padding: 5px;
+}
+
+.NameField{
+    display: block;
+    padding: 5px;
+}
+
+.DetailDiv {
+    display: block;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#diagnosis{
+    width: 100%;
+}
+
+.NameField input {
+    width: 100%;
+}
+
+#IsSelfCheckbox {
+    float: left;
+}
+
+#IsSelfCheckboxContainer {
+    display: inline-block;
+    width: 100%;
+}
