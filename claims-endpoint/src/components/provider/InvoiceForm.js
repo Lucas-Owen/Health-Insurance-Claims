@@ -8,10 +8,10 @@ class InvoiceForm extends react.Component {
     render(){
 
         return (
-            <div id="invoiceForm" className="claimPageChild">
+            <form id="invoiceForm" className="claimPageChild" onSubmit={this.props.submitInvoice}>
                 <h3>Invoice</h3>
-                <div>Provider: <input type='text' value={this.props.state.providerName} name='providerName' onChange={this.props.changeHandler}/></div>
-                <div>Invoice Reference <input type='text' value={this.props.state.invoiceId} name='invoiceId' onChange={this.props.changeHandler}/></div>
+                <div>Provider: <input type='text' value={this.props.state.providerName} name='providerName' onChange={this.props.changeHandler} required/></div>
+                <div>Invoice Reference <input type='text' value={this.props.state.invoiceReference} name='invoiceReference' onChange={this.props.changeHandler} required/></div>
                 <fieldset>
                     <legend>Patient</legend>
                     <div>
@@ -24,18 +24,18 @@ class InvoiceForm extends react.Component {
                 <fieldset>
                     <legend>Invoice Lines</legend>
                     <div className="LineDiv">
-                        <label for="Category">Category </label>
+                        <label htmlFor="Category">Category </label>
                         <input type='text' onChange={this.props.handleNewLineChange} name='category' value={this.props.state.newLine.category}/>
                     </div>
                     <div className="LineDiv">
-                        <label for='Description'>Description </label>
+                        <label htmlFor='Description'>Description </label>
                         <input type='text' onChange={this.props.handleNewLineChange} name='description' value={this.props.state.newLine.description}/>
                     </div>
                     <div className="LineDiv">
-                        <label for='Price'>Price </label>
+                        <label htmlFor='Price'>Price </label>
                         <input type='number' onChange={this.props.handleNewLineChange} name='pricePerUnit' value={this.props.state.newLine.pricePerUnit}/></div>
                     <div className="LineDiv">
-                        <label for='Quantity'>Quantity</label>
+                        <label htmlFor='Quantity'>Quantity</label>
                         <input type='number' onChange={this.props.handleNewLineChange} name='quantity' value={this.props.state.newLine.quantity}/>
                     </div>
                     <button onClick={this.props.addInvoiceLine}>Add Line</button>
@@ -58,7 +58,10 @@ class InvoiceForm extends react.Component {
                         </tbody>
                     </table>
                 </fieldset>
-            </div>);
+                <div className='centerContainer'>
+                    <input className='claimPageSubmitButton' type='submit' value='File Invoice'/>
+                </div>
+            </form>);
     }
 }
 

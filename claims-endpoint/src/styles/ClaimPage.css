@@ -13,9 +13,11 @@ h3 {
     text-align: center;
 }
 
-#claimPageSubmitButtons {
-    width: 96%;
-    display: flex;
-    justify-content: center;
+.claimPageSubmitButton {
+    width: 100px;
+}
+
+.centerContainer {
+    padding-top: 5px;
 }
 

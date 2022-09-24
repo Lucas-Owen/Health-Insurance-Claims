@@ -30,3 +30,12 @@ input::-webkit-inner-spin-button {
 .NameField input {
     width: 100%;
 }
+
+#IsSelfCheckbox {
+    float: left;
+}
+
+#IsSelfCheckboxContainer {
+    display: inline-block;
+    width: 100%;
+}
